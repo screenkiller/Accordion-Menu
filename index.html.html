@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body{
+  background-color: #D6CFC2;
+
+}
+ .texto-Cabezera{
+  align-content: center;
+    align-items: end;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    color:#9B6349 ;
+    font-size: 18px;
+    
+}
+
+.texto-Cabezera .txt1{
+  margin-left: 10%;
+  margin-bottom: 4px;
+}
+ .texto-Cabezera .txt2{
+  margin-right: 10%;
+  margin-bottom: 4px;
+ }
+
+  .acordeon {
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    padding-left: 40px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  
+  .acordeon.activo {
+    background-color: #E0A955;
+  }
+
+  .acordeon.principal {
+    background-color: #F6A336;
+  }
+
+  .acordeon.vinos {
+    background-color: #E99532;
+    position: relative;
+    margin-top: -3px;
+    
+  }
+
+  .acordeon.alcoholicas {
+    background-color: #DD882F;
+    position: relative;
+    margin-top: -3px;
+  }
+
+  .acordeon.refrescos {
+    background-color:#D17B2C;
+    position: relative;
+    margin-top: -3px;
+
+  }
+
+  .acordeon.cafe {
+    background-color: #C66F29;
+    position: relative;
+    margin-top: -3px;
+  }
+  /* Estilo para el ícono de más (+) */
+.toggle .plus {
+  font-size: 30px; /* Tamaño de fuente personalizado */
+}
+
+/* Estilo para el ícono de menos (-) */
+.toggle .minus {
+  font-size: 30px; /* Tamaño de fuente personalizado */
+}
+
+
+  .toggle {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0px; /* Espaciado entre la cruz y el texto del submenú */
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 2px;
+  }   
+
+.cross {
+    width: 20px; /* Ancho de la cruz */
+    height: 25px; /* Altura de la cruz */
+    background-color: transparent;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px; /* Ancho de las líneas de la cruz */
+    background-color: white;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cross:before {
+    transform: rotate(45deg);
+}
+
+.cross:after {
+    transform: rotate(-45deg);
+}
+.submenu-principal{
+  background-color: #D6CFC2 !important;
+}
+
+  .panel {
+    padding: 0;
+    display: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #D6CFC2!important;
+    color: #8B593B;
+
+  }
+  .panel text{
+     color:#B57C45
+  }
+
+  .panel .panelsub-menu-panel-1{
+    background-color: #D69D50;
+
+  }
+  .panel-1-img{
+    align-content: center;
+   height: 70%;
+    width: 100%;
+    border-radius: 10px !important;
+    margin-top:-6px;
+  }
+
+  .submenu {
+    justify-content: space-between;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+    display: flex;
+    border: none;
+    border-radius: 0;
+    color: white;
+    transition: background-color 0.4s;
+    width: 100%;
+    
+  }
+
+  /*  Colores primer acordeon submenu "Platos pricipales"*/
+
+  .submenu1{
+    background-color: #F6A336!important;
+
+  }
+.submenu2{
+background-color: #f6a336!important; 
+}
+.submenu3{
+  background-color: #F6A336!important;
+}
+ 
+  /*  Colores segundo acordeon submenu "Vinos"*/
+  .submenu4{
+    background-color: #E99532!important;
+
+  }
+  .submenu5{
+    background-color: #E99532!important;
+
+  }
+  .submenu6{
+    background-color: #E99532!important;
+
+  }
+
+  .submenu7 {
+    background-color: #DD882F;
+
+  }
+  
+.submenu8{
+  background-color: #DD882F;
+}
+
+.submenu9{
+  background-color: #DD882F;
+}
+
+.submenu10{
+  background-color:#D17B2C ;
+}
+.submenu11{
+  background-color:#D17B2C ;
+}
+.submenu12{
+  background-color:#D17B2C ;
+}
+/* tercerpanel */
+.submenu13{
+  background-color: #C66F29;
+}
+.submenu14{
+  background-color: #C66F29;
+}
+.submenu15{
+  background-color: #C66F29;
+}
+
+button{
+    size: 30px;
+  }
+
+  
+  
+
+  .sub-menu-separador {
+    border-top: 1px solid white;
+    margin-top: 1px;
+    display: flex;
+    width: 90%;
+    display: flex;
+  }
+  .sub-menu-separador p{
+    font-size: 16px;
+    margin-top: 2%;
+    padding: 5px 0px 10px 5px;
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+.separador-transparente{
+width: 100%;
+height: 55px;
+border-radius: 5px;
+border-style: none;
+background-color:#D6CFC2 ;
+position: relative;
+bottom: 0.2em;
+cursor: pointer;
+pointer-events: none;
+
+
+}
+
+
+</style>
+</head>
+<body>
+  <div class="texto-Cabezera">
+    <p class="txt1">Para Comer </p>
+    <p class="txt2">Para Beber</p>
+  </div>
+
+<div class="menu-contenedor">
+  
+  <button class="acordeon principal">Platos Principales</button>
+  <div class="panel">
+
+    <button class="submenu submenu1">  
+      <div class="sub-menu-separador">
+      <p> 
+        Angus Braseada
+      </p>
+      </div>
+   </button>
+    <!-- Entrada de Platos -->
+    <div class="panel sub-menu-panel-1">
+        <img class="panel-1-img" src="https://ambarvistahermosa.com/wp-content/uploads/2023/08/Plato.png" alt="">
+       <h3>DESCRIPCIÓN DEL PLATO</h3> 
+        <p>Mollejas de Angus braseada pintada con nuestra salsa casera <br>
+            anticuchera acompañada de limón quemado.</p>
+          <h3>MARIDAJE</h3>
+          <P>Se recomienda acompañar con un vino seco...</P>
+          <h3>ALÉRGENOS</h3>
+          <p>Espacio para indicar los posibles alérgenos que pueda contener el plato.</p>
+
+    </div>
+    <button class="submenu submenu2">  
+      <div class="sub-menu-separador">
+        
+
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu3">  
+      <div class="sub-menu-separador">
+      <p>Opción 3</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 3</p>
+      
+    </div>
+  </div>
+
+  <button class="acordeon vinos">Vinos</button>
+  <div class="panel">
+    <button class="submenu submenu4">  
+      <div class="sub-menu-separador">
+      <p>Opción 1</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+     
+    </div>
+    <button class="submenu submenu5">  
+      <div class="sub-menu-separador">
+      <p>Opción 2</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu6">  
+      <div class="sub-menu-separador">
+      <p>Opción 3</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+  </div>
+
+  <button class="acordeon alcoholicas">Bebidas Alcohólicas</button>
+  <div class="panel">
+    <button class="submenu submenu7">  
+      <div class="sub-menu-separador">
+      <p>Opción 1</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu8">  
+      <div class="sub-menu-separador">
+      <p>Opción 2</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu9">  
+      <div class="sub-menu-separador">
+      <p>Opción 3</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 
+     
+    </div>
+  </div>
+
+  <button class="acordeon refrescos">Refrescos</button>
+  <div class="panel">
+    <button class="submenu submenu10">  
+      <div class="sub-menu-separador">
+      <p>Opción 1</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu11">  
+      <div class="sub-menu-separador">
+      <p>Angus Braseada</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+    <button class="submenu submenu12">  
+      <div class="sub-menu-separador">
+      <p>Angus Braseada</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 1</p>
+      
+    </div>
+  </div>
+
+  <button class="acordeon cafe">Café y Tés</button>
+  <div class="panel">
+    <button class="submenu submenu13">  
+      <div class="sub-menu-separador">
+      <p>Subopción 1</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción</p>
+      
+    </div>
+    <button class="submenu submenu14">  
+      <div class="sub-menu-separador">
+      <p>Subopción 2</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 3</p>
+      
+    </div>
+    <button class="submenu submenu15">  
+      <div class="sub-menu-separador">
+      <p>Subopción 4</p>
+      </div>
+   </button>
+    <div class="panel sub-menu-panel">
+      <p>Subopción 5</p>
+     
+    </div>
+  </div>
+</div>
+<!-- Entrada de platos termina -->
+<button class="separador-transparente"></button>
+
+<script>
+
+  // Para iterar sobre los contenedoresdel submenu si agrega mas  aumente el numero
+  document.addEventListener("DOMContentLoaded", function() {
+  for (let i = 1; i <= 154; i++) {
+    const className = `.submenu${i}`;
+    const subMenus = document.querySelectorAll(className);
+
+    subMenus.forEach(function(subMenu) {
+      const toggleButton = document.createElement("div");
+      toggleButton.classList.add("toggle");
+      toggleButton.innerHTML = '<div class="plus">+</div>';
+      subMenu.appendChild(toggleButton);
+
+      toggleButton.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const subMenuPanel = subMenu.nextElementSibling;
+
+        if (subMenuPanel.style.display === "none" || subMenuPanel.style.display === "") {
+          subMenuPanel.style.display = "block";
+          toggleButton.querySelector(".plus").style.display = "none";
+          toggleButton.innerHTML = '<div class="minus">-</div>';
+        } else {
+          subMenuPanel.style.display = "none";
+          toggleButton.querySelector(".minus").style.display = "none";
+          toggleButton.innerHTML = '<div class="plus">+</div>';
+        }
+      });
+
+      subMenu.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const subMenuPanel = subMenu.nextElementSibling;
+
+        if (subMenuPanel.style.display === "none" || subMenuPanel.style.display === "") {
+          subMenuPanel.style.display = "block";
+          toggleButton.querySelector(".plus").style.display = "none";
+          toggleButton.innerHTML = '<div class="minus">-</div>';
+        } else {
+          subMenuPanel.style.display = "none";
+          toggleButton.querySelector(".minus").style.display = "none";
+          toggleButton.innerHTML = '<div class="plus">+</div>';
+        }
+      });
+    });
+  }
+
+  const acordeones = document.querySelectorAll(".acordeon");
+
+  acordeones.forEach(function(acordeon) {
+    acordeon.addEventListener("click", function() {
+      acordeones.forEach(function(item) {
+        if (item !== acordeon) {
+          item.classList.remove("activo");
+          item.nextElementSibling.style.display = "none";
+        }
+      });
+
+      this.classList.toggle("activo");
+      const panel = this.nextElementSibling;
+
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+        const otrosPaneles = document.querySelectorAll(".panel");
+        otrosPaneles.forEach(function(otroPanel) {
+          if (otroPanel !== panel) {
+            otroPanel.style.display = "none";
+          }
+        });
+      }
+    });
+  });
+});
+
+
+</script>
+
+</body>
+</html>
