@@ -1,2 +1,2 @@
 # Accordion-Menu
-Acordion Para  carta de restauran o productos
+Acordion Para  carta de restaurant o productos
